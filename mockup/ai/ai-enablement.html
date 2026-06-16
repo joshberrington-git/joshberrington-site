@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>From One Proposal to a Self-Sustaining Program — Josh Berrington</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafafa;
+    --bg-raised: #f0eee8;
+    --text: #1f1d1c;
+    --text-muted: #5c5855;
+    --border: #d6d3d2;
+    --accent: #d15010;
+  }
+  html.dark {
+    --bg: #0a0908;
+    --bg-raised: #161413;
+    --text: #f5f3f0;
+    --text-muted: #9c9690;
+    --border: #2e2c2b;
+    --accent: #ee6018;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Geist', sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  h1, h2, h3 { font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+  .mono { font-family: 'Geist Mono', monospace; }
+  a { color: inherit; }
+  .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 24px; max-width: 920px; margin: 0 auto;
+  }
+  .nav-name { font-size: 1.05rem; font-weight: 600; text-decoration: none; }
+  .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.88rem; color: var(--text-muted); }
+  .nav-links a { text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .theme-toggle {
+    width: 42px; height: 24px; border-radius: 12px; background: var(--border);
+    position: relative; cursor: pointer; border: none; padding: 0; flex-shrink: 0;
+  }
+  .theme-toggle::after {
+    content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px;
+    border-radius: 50%; background: var(--bg); box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    transition: transform 0.25s ease;
+  }
+  html.dark .theme-toggle::after { transform: translateX(18px); }
+
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.88rem; color: var(--text-muted); text-decoration: none;
+    margin: 40px 0 28px;
+  }
+  .back-link:hover { color: var(--text); }
+
+  .story-eyebrow {
+    display: inline-flex; align-items: center;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent); background: var(--bg-raised); border: 1px solid var(--border);
+    padding: 6px 12px; border-radius: 999px;
+    margin-bottom: 18px; font-weight: 500;
+  }
+  .story-title { font-size: 2.3rem; line-height: 1.15; margin: 0 0 16px; }
+  .story-meta { font-size: 0.92rem; color: var(--text-muted); margin: 0 0 36px; }
+
+  .story-hero-img {
+    width: 100%; aspect-ratio: 16/9; object-fit: cover;
+    border-radius: 20px; margin-bottom: 40px;
+  }
+  .story-stat-hero {
+    border-radius: 20px; margin-bottom: 40px; padding: 48px 32px;
+    background: var(--bg-raised); border-left: 2px solid var(--accent);
+    text-align: center;
+  }
+  .story-stat-hero .stat {
+    font-family: 'Geist Mono', monospace; font-size: 2.2rem; color: var(--accent);
+    margin: 0; letter-spacing: -0.01em;
+  }
+
+  .story-body { font-family: 'Newsreader', serif; font-size: 1.18rem; line-height: 1.75; }
+  .story-body p { margin: 0 0 26px; }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 40px 0; margin-top: 40px;
+    font-size: 0.88rem; color: var(--text-muted);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="../index.html">Josh Berrington</a>
+    <div class="nav-links">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#ai-work">AI Work</a>
+      <a href="#" aria-disabled="true">Writing</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"></button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <a class="back-link" href="../index.html#ai-work">&larr; Back to AI work</a>
+
+  <div class="story-eyebrow">Amazon · Alexa Smart Home · 2024–Present</div>
+  <h1 class="story-title">From One Proposal to a Self-Sustaining Program</h1>
+  <p class="story-meta">A capability gap, a VP-approved proposal, and a program that no longer needs me.</p>
+
+  <div class="story-stat-hero"><p class="stat">9 &rarr; 18 &rarr; self-sustaining</p></div>
+
+  <div class="story-body">
+      <p>I noticed the gap before there was a program to fix it: the org was excited about AI in the abstract but had no structured way to actually build fluency at scale. So I wrote the proposal myself &mdash; not a request for resources, but a specific plan for a cross-org AI enablement initiative &mdash; and took it to VP-level approval.</p>
+      <p>The core team grew from 9 to 18 people within a year, but the number that actually mattered came later: roughly a dozen colleagues now independently lead org-wide weekly trainings, and SDE, design, and GTM teams build and deploy their own AI tools without any ongoing support from the original team. I also designed the division's first AI adoption measurement system &mdash; tracking attitudes, usage, and impact on a quarterly cadence &mdash; so the program's success wouldn't rely on anecdote.</p>
+      <p>A program that still needs its founder a year in hasn't actually succeeded. The best evidence this one worked is how little anyone needs me for it now.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%; max-width:920px;">
+    <span>&copy; 2026 Josh Berrington</span>
+    <span><a href="https://www.linkedin.com/in/joshberrington" target="_blank" rel="noopener">LinkedIn</a></span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const stored = localStorage.getItem('theme');
+  if (stored === 'light') root.classList.remove('dark');
+  else root.classList.add('dark');
+  toggle.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+  });
+</script>
+</body>
+</html>
