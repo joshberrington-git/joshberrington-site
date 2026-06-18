@@ -551,6 +551,14 @@
     {
       "file": "alexa-smart-home.png",
       "url": "https://res.cloudinary.com/dflbkiog6/image/upload/v1781622182/joshberrington-site/alexa-smart-home.png"
+    },
+    {
+      "file": "ae_desktop.png",
+      "url": "https://res.cloudinary.com/dflbkiog6/image/upload/v1781758222/joshberrington-site/ae_desktop.png"
+    },
+    {
+      "file": "ae_mobile.png",
+      "url": "https://res.cloudinary.com/dflbkiog6/image/upload/v1781758223/joshberrington-site/ae_mobile.png"
     }
   ],
   "failed": []

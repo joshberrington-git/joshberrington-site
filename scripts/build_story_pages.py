@@ -94,6 +94,22 @@ STYLE = """
   .story-body { font-family: 'Newsreader', serif; font-size: 1.18rem; line-height: 1.75; }
   .story-body p { margin: 0 0 26px; }
 
+  .story-gallery-wrap { margin: 40px 0 0; }
+  .story-gallery {
+    display: flex; align-items: flex-end; justify-content: center; gap: 26px;
+  }
+  .story-gallery img { display: block; height: auto; }
+  .story-gallery .ae-desktop {
+    width: 62%; border-radius: 12px; border: 1px solid var(--border);
+    box-shadow: 0 10px 34px rgba(0,0,0,0.20);
+  }
+  .story-gallery .ae-mobile { width: 28%; }
+  .story-caption {
+    font-family: 'Geist Mono', monospace; font-size: 0.76rem; letter-spacing: 0.03em;
+    color: var(--text-muted); text-align: center; margin: 18px 0 0;
+  }
+  @media (max-width: 560px) { .story-gallery { gap: 14px; } }
+
   footer {
     border-top: 1px solid var(--border); padding: 40px 0; margin-top: 40px;
     font-size: 0.88rem; color: var(--text-muted);
@@ -115,12 +131,23 @@ SCRIPT = """
   });
 """
 
-def page(slug, title, eyebrow, meta, paragraphs, hero_img=None, hero_alt="", stat=None, back_anchor="#work", back_label="Back to work"):
+def page(slug, title, eyebrow, meta, paragraphs, hero_img=None, hero_alt="", stat=None, back_anchor="#work", back_label="Back to work", gallery=None):
     body_html = "\n".join(f"      <p>{p}</p>" for p in paragraphs)
     if hero_img:
         hero_html = f'<img class="story-hero-img" src="{hero_img}" alt="{hero_alt}" />'
     else:
         hero_html = f'<div class="story-stat-hero"><p class="stat">{stat}</p></div>'
+    if gallery:
+        gallery_html = f"""
+  <figure class="story-gallery-wrap">
+    <div class="story-gallery">
+      <img class="ae-desktop" src="{gallery['desktop']}" alt="{gallery['desktop_alt']}" />
+      <img class="ae-mobile" src="{gallery['mobile']}" alt="{gallery['mobile_alt']}" />
+    </div>
+    <figcaption class="story-caption">{gallery['caption']}</figcaption>
+  </figure>"""
+    else:
+        gallery_html = ""
     return f"""<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
@@ -158,7 +185,7 @@ def page(slug, title, eyebrow, meta, paragraphs, hero_img=None, hero_alt="", sta
 
   <div class="story-body">
 {body_html}
-  </div>
+  </div>{gallery_html}
 </div>
 
 <footer>
@@ -200,6 +227,13 @@ pages = {
             "One of the most significant outputs was the concept of celebrity and creator-led collaborations. I helped lead the pitch for a partnership with a major creator and cultural tastemaker with genuine resonance in the brand's space. It exceeded expectations on every dimension, and more importantly it proved a repeatable model: what began as a single partnership evolved into a new business unit, enabling a broader slate of creator-led drops and collaborations going forward.",
             "The before-and-after is stark. Amazon Essentials was originally built out of commercial necessity &mdash; a private label play offering quality basics under the Amazon umbrella. It launched with a logo and a typeface, but without a soul: no narrative, no world-building, no emotional architecture for customers to connect with. What exists now is a fully considered brand &mdash; a visual identity, a clear point of view, a storytelling framework, and a cultural calendar anchored by seasonal drops, fabric stories, and texture narratives. In a category that's crowded, commoditized, and largely undifferentiated at the brand level, that depth gives Essentials a position that feels both credibly rooted in the category and distinctly its own &mdash; the kind of thing that's hard to replicate and durable over time.",
         ],
+        gallery=dict(
+            desktop="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/ae_desktop.png",
+            desktop_alt="Repositioned Amazon Essentials storefront on desktop",
+            mobile="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/ae_mobile.png",
+            mobile_alt="Repositioned Amazon Essentials storefront on mobile",
+            caption="The repositioned storefront, live across desktop and mobile.",
+        ),
     ),
     "dove-body-wash.html": dict(
         title="The Brand That Wrote the Playbook",
@@ -300,6 +334,7 @@ for filename, content in pages.items():
         hero_img=content["hero_img"],
         hero_alt=content["hero_alt"],
         paragraphs=content["paragraphs"],
+        gallery=content.get("gallery"),
     )
     with open(os.path.join(OUT_DIR, filename), "w") as f:
         f.write(html)
