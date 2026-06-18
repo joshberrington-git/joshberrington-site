@@ -292,7 +292,7 @@ pages = {
         gallery=dict(
             desktop="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/ae_desktop.png",
             desktop_alt="Repositioned Amazon Essentials storefront on desktop",
-            mobile="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/ae_mobile.png",
+            mobile="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/ae_mobile_clean.png",
             mobile_alt="Repositioned Amazon Essentials storefront on mobile",
             caption="The repositioned storefront, live across desktop and mobile.",
         ),
