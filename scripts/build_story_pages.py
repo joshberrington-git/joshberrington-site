@@ -178,7 +178,7 @@ pages = {
         title="Zero to Market in Nine Months",
         eyebrow="Amazon · Private Brands · 2021–2024",
         meta="A CEO-level priority, a global pandemic, and a brand built from nothing.",
-        hero_img="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/AA_H_HomeRefresh_2x1_V05_Full.jpg",
+        hero_img="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/DG_FW21_Womens_On_Dresses_Shot20_190_FINAL.jpg",
         hero_alt="Amazon Aware campaign imagery",
         paragraphs=[
             "Amazon Aware wasn't a side project or a slide in someone else's strategy deck &mdash; it was an S-Team level priority, a CEO-driven initiative to launch Amazon's first sustainability-led brand, and it had to go from PR/FAQ to in-market reality in nine months. I was the founding go-to-market marketing lead, which meant the brand didn't exist yet when I started, and the clock was already running.",
@@ -190,14 +190,15 @@ pages = {
     "amazon-essentials.html": dict(
         title="Repositioning the Largest Brand in the Portfolio",
         eyebrow="Amazon · Private Brands · 2021–2024",
-        meta="Brand strategy, research, and a total repositioning for Amazon's largest softlines brand.",
-        hero_img="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/DG_FW21_Womens_On_Dresses_Shot20_190_FINAL.jpg",
+        meta="Six months of research, a creator-led collaboration model, and a total repositioning for Amazon's largest softlines brand.",
+        hero_img="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/AA_H_HomeRefresh_2x1_V05_Full.jpg",
         hero_alt="Amazon Essentials campaign imagery",
         paragraphs=[
-            "Amazon Essentials is the largest softlines brand on Amazon.com, generating well into the hundreds of millions in annual revenue. I came on as the global marketing lead for the brand with a clear mandate: reposition it, refresh it, and make the strategy underneath it as strong as the business it was supporting.",
-            "That meant starting from the ground up &mdash; foundational customer research, a new brand strategy, and selecting the global creative agency of record we'd build the next chapter with. It also meant work that never became visible externally: evaluating how Essentials sat alongside sister brands in the Private Brands portfolio, and building the case to consolidate investment behind Essentials specifically rather than spreading it thin.",
-            "The repositioning itself touched every layer of the brand: identity, voice and tone, the entire visual language, messaging and positioning strategy, and merchandising and storefront presentation. Not a refresh of one piece &mdash; a complete rebuild of how the brand shows up everywhere a customer encounters it.",
-            "What I'm proudest of isn't the creative people eventually saw &mdash; it's the strategic groundwork underneath it that made that creative inevitable rather than a guess.",
+            "One of the hardest marketing assignments isn't rescuing a failing brand &mdash; it's inheriting one that looks healthy on the surface while quietly losing ground underneath. That was the situation I stepped into as Global Marketing Lead for Amazon Essentials. By top-line measures the brand was performing, but a closer read of the data told a more complicated story: a brand in need of repositioning, modernization, and a genuine creative identity.",
+            "The central tension was knowing how much change to introduce without eroding what was already working. Refreshes fail when they overcorrect &mdash; when the pursuit of newness breaks the trust customers have already extended. The discipline isn't boldness alone; it's knowing exactly where to be bold and where to hold steady. To answer that, we invested over six months in deep customer and brand research &mdash; understanding where Essentials was delighting customers, where it was falling short, and where it had no real right to compete at all. That became the strategic foundation: a clear map of where to pivot, where to double down, and where to deliberately step back.",
+            "From there we wrote the brief that went to our agency, AKQA Amsterdam &mdash; and the work extended well beyond a visual rebrand. This was a holistic reconsidering of the brand: product strategy, hero SKU and ASIN prioritization, and creator and cultural strategy. We weren't just refreshing an identity; we were building the infrastructure for a brand that could grow.",
+            "One of the most significant outputs was the concept of celebrity and creator-led collaborations. I helped lead the pitch for a partnership with a major creator and cultural tastemaker with genuine resonance in the brand's space. It exceeded expectations on every dimension, and more importantly it proved a repeatable model: what began as a single partnership evolved into a new business unit, enabling a broader slate of creator-led drops and collaborations going forward.",
+            "The before-and-after is stark. Amazon Essentials was originally built out of commercial necessity &mdash; a private label play offering quality basics under the Amazon umbrella. It launched with a logo and a typeface, but without a soul: no narrative, no world-building, no emotional architecture for customers to connect with. What exists now is a fully considered brand &mdash; a visual identity, a clear point of view, a storytelling framework, and a cultural calendar anchored by seasonal drops, fabric stories, and texture narratives. In a category that's crowded, commoditized, and largely undifferentiated at the brand level, that depth gives Essentials a position that feels both credibly rooted in the category and distinctly its own &mdash; the kind of thing that's hard to replicate and durable over time.",
         ],
     ),
     "dove-body-wash.html": dict(
@@ -223,6 +224,19 @@ pages = {
             "I could have approached the turnaround as a pure numbers problem. Instead, the real work was understanding the culture this brand actually belonged to &mdash; not as a demographic to target, but as a community to genuinely understand, with real curiosity and respect for an experience that wasn't mine. I built the five-year innovation roadmap, then rebuilt positioning, channel strategy, messaging, and the full content plan around that understanding.",
             "The business results followed: revenue grew roughly 5x in under eighteen months, alongside real gains in distribution and social reach. Several campaigns were recognized in Ad Age and other outlets for resonating authentically within the community, and the products themselves picked up industry awards for their formulations.",
             "But the growth was the output, not the point. The story I actually wanted to tell was about what happens when a brand is built on cultural appreciation and celebration instead of a generic playbook applied to a new audience &mdash; the business case turned out to be the proof, not the motivation.",
+        ],
+    ),
+    "alexa-smart-home.html": dict(
+        title="Leading GTM for AI-Powered Smart Home",
+        eyebrow="Amazon · Alexa Smart Home · 2024–Now",
+        meta="The launch narrative for Alexa+ Smart Home, and the agent infrastructure built to support it.",
+        hero_img="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/alexa-smart-home.png",
+        hero_alt="Alexa smart home devices and services",
+        paragraphs=[
+            "I lead go-to-market strategy for Alexa Smart Home's AI-powered hardware and software features &mdash; the layer of the business where the devices people already trust in their homes start getting genuinely smarter. That includes owning the launch narrative for Alexa+ Smart Home, the division's flagship AI moment at CES 2026, where the story had to land with press, partners, and customers all at once.",
+            "Bringing an AI-native product to market requires a different motion than a traditional hardware launch: the value isn't a spec sheet, it's a behavior change, and the narrative has to make an invisible, evolving capability feel concrete enough to want. That meant rebuilding the GTM playbook itself &mdash; positioning, proof points, and sequencing &mdash; for a product that keeps getting smarter after it ships.",
+            "The work didn't stop at the narrative. To move at the speed AI products demand, I built a six-agent AI system to compress my own workflow, then rebuilt it as a self-serve agent platform so SDE, design, and GTM teams across the division could do the same. What started as a personal productivity tool is now infrastructure other teams build on.",
+            "The thread connecting both: in an AI-native world, marketing leaders can't just narrate the transformation &mdash; they have to be early, credible practitioners of it.",
         ],
     ),
 }
