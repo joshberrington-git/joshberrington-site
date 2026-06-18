@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>From One Proposal to a Self-Sustaining Program — Josh Berrington</title>
+<title>Speak It, Ship It — Josh Berrington</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -104,11 +104,11 @@
     display: flex; align-items: flex-end; justify-content: center; gap: 26px;
   }
   .story-gallery img { display: block; height: auto; }
-  .story-gallery .ae-desktop {
+  .story-gallery .gallery-desktop {
     width: 62%; border-radius: 12px; border: 1px solid var(--border);
     box-shadow: 0 10px 34px rgba(0,0,0,0.20);
   }
-  .story-gallery .ae-mobile { width: 28%; }
+  .story-gallery .gallery-mobile { width: 28%; }
   .story-caption {
     font-family: 'Geist Mono', monospace; font-size: 0.76rem; letter-spacing: 0.03em;
     color: var(--text-muted); text-align: center; margin: 18px 0 0;
@@ -143,16 +143,23 @@
     <a class="back-link" href="../index.html#ai-work">&larr; Back to AI work</a>
     <div class="story-eyebrow">Amazon · Alexa Smart Home · 2024–Present</div>
   </div>
-  <h1 class="story-title">From One Proposal to a Self-Sustaining Program</h1>
-  <p class="story-meta">A capability gap, a VP-approved proposal, and a program that no longer needs me.</p>
+  <h1 class="story-title">Speak It, Ship It</h1>
+  <p class="story-meta">A local, privacy-first voice-to-text tool for Windows &mdash; built in two days with Claude Code, by a non-engineer.</p>
 
-  <div class="story-stat-hero"><p class="stat">9 &rarr; 18 &rarr; self-sustaining</p></div>
+  <div class="story-stat-hero"><p class="stat">Built in 2 days</p></div>
 
   <div class="story-body">
-      <p>I noticed the gap before there was a program to fix it: the org was excited about AI in the abstract but had no structured way to actually build fluency at scale. So I wrote the proposal myself &mdash; not a request for resources, but a specific plan for a cross-org AI enablement initiative &mdash; and took it to VP-level approval.</p>
-      <p>The core team grew from 9 to 18 people within a year, but the number that actually mattered came later: roughly a dozen colleagues now independently lead org-wide weekly trainings, and SDE, design, and GTM teams build and deploy their own AI tools without any ongoing support from the original team. I also designed the division's first AI adoption measurement system &mdash; tracking attitudes, usage, and impact on a quarterly cadence &mdash; so the program's success wouldn't rely on anecdote.</p>
-      <p>A program that still needs its founder a year in hasn't actually succeeded. The best evidence this one worked is how little anyone needs me for it now.</p>
+      <p>At home, on my personal Mac, I'd gotten used to speaking my prompts to Claude Code instead of typing them. Conversational, paragraph-long instructions are faster to say than to type, and a tool called Wispr Flow made it effortless. Then I'd sit down at my Windows machine at work and that entire workflow vanished &mdash; there was no local, PC-native equivalent. So instead of filing it under things I wished existed, I built one.</p>
+      <p>Dictate lives in the system tray: double-tap Alt to start, tap to stop, and the transcription drops straight into whatever window is in front of you &mdash; a terminal, an editor, a chat box. The thing I cared about most is that it all runs on the machine. Audio never leaves the PC; it's transcribed locally. That's the difference between a tool you can actually use for sensitive work and one that's a compliance problem from day one. It ships as a single installer with nothing else to wrangle.</p>
+      <p>Here's the part I keep coming back to: I'm a product marketer, not a software engineer, and this is a native app written in Rust, talking to low-level Windows APIs, running a local speech model as a subprocess. I didn't write that code &mdash; Claude Code did. My job was the product: what it should do, where it should be sharp, what to leave out. Two days from idea to a working installer. The barrier to building real software used to be knowing how. Increasingly, it's just knowing what you want and being willing to direct it.</p>
   </div>
+  <figure class="story-gallery-wrap">
+    <div class="story-gallery">
+      <img class="gallery-desktop" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/dictate_desktop.png" alt="Dictate landing page on desktop" />
+      <img class="gallery-mobile" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/dictate_mobile.png" alt="Dictate landing page on mobile" />
+    </div>
+    <figcaption class="story-caption">The Dictate landing page, across desktop and mobile.</figcaption>
+  </figure>
 </div>
 
 <footer>

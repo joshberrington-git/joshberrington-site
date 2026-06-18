@@ -559,6 +559,14 @@
     {
       "file": "ae_mobile.png",
       "url": "https://res.cloudinary.com/dflbkiog6/image/upload/v1781758223/joshberrington-site/ae_mobile.png"
+    },
+    {
+      "file": "dictate_desktop.png",
+      "url": "https://res.cloudinary.com/dflbkiog6/image/upload/v1781758740/joshberrington-site/dictate_desktop.png"
+    },
+    {
+      "file": "dictate_mobile.png",
+      "url": "https://res.cloudinary.com/dflbkiog6/image/upload/v1781758742/joshberrington-site/dictate_mobile.png"
     }
   ],
   "failed": []

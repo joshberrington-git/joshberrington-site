@@ -99,11 +99,11 @@ STYLE = """
     display: flex; align-items: flex-end; justify-content: center; gap: 26px;
   }
   .story-gallery img { display: block; height: auto; }
-  .story-gallery .ae-desktop {
+  .story-gallery .gallery-desktop {
     width: 62%; border-radius: 12px; border: 1px solid var(--border);
     box-shadow: 0 10px 34px rgba(0,0,0,0.20);
   }
-  .story-gallery .ae-mobile { width: 28%; }
+  .story-gallery .gallery-mobile { width: 28%; }
   .story-caption {
     font-family: 'Geist Mono', monospace; font-size: 0.76rem; letter-spacing: 0.03em;
     color: var(--text-muted); text-align: center; margin: 18px 0 0;
@@ -141,8 +141,8 @@ def page(slug, title, eyebrow, meta, paragraphs, hero_img=None, hero_alt="", sta
         gallery_html = f"""
   <figure class="story-gallery-wrap">
     <div class="story-gallery">
-      <img class="ae-desktop" src="{gallery['desktop']}" alt="{gallery['desktop_alt']}" />
-      <img class="ae-mobile" src="{gallery['mobile']}" alt="{gallery['mobile_alt']}" />
+      <img class="gallery-desktop" src="{gallery['desktop']}" alt="{gallery['desktop_alt']}" />
+      <img class="gallery-mobile" src="{gallery['mobile']}" alt="{gallery['mobile_alt']}" />
     </div>
     <figcaption class="story-caption">{gallery['caption']}</figcaption>
   </figure>"""
@@ -278,6 +278,24 @@ pages = {
 AI_OUT_DIR = "/Users/josh/Projects/joshberrington-site/mockup/ai"
 
 ai_pages = {
+    "dictate.html": dict(
+        title="Speak It, Ship It",
+        eyebrow="Amazon · Alexa Smart Home · 2024–Present",
+        meta="A local, privacy-first voice-to-text tool for Windows &mdash; built in two days with Claude Code, by a non-engineer.",
+        stat="Built in 2 days",
+        paragraphs=[
+            "At home, on my personal Mac, I'd gotten used to speaking my prompts to Claude Code instead of typing them. Conversational, paragraph-long instructions are faster to say than to type, and a tool called Wispr Flow made it effortless. Then I'd sit down at my Windows machine at work and that entire workflow vanished &mdash; there was no local, PC-native equivalent. So instead of filing it under things I wished existed, I built one.",
+            "Dictate lives in the system tray: double-tap Alt to start, tap to stop, and the transcription drops straight into whatever window is in front of you &mdash; a terminal, an editor, a chat box. The thing I cared about most is that it all runs on the machine. Audio never leaves the PC; it's transcribed locally. That's the difference between a tool you can actually use for sensitive work and one that's a compliance problem from day one. It ships as a single installer with nothing else to wrangle.",
+            "Here's the part I keep coming back to: I'm a product marketer, not a software engineer, and this is a native app written in Rust, talking to low-level Windows APIs, running a local speech model as a subprocess. I didn't write that code &mdash; Claude Code did. My job was the product: what it should do, where it should be sharp, what to leave out. Two days from idea to a working installer. The barrier to building real software used to be knowing how. Increasingly, it's just knowing what you want and being willing to direct it.",
+        ],
+        gallery=dict(
+            desktop="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/dictate_desktop.png",
+            desktop_alt="Dictate landing page on desktop",
+            mobile="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/dictate_mobile.png",
+            mobile_alt="Dictate landing page on mobile",
+            caption="The Dictate landing page, across desktop and mobile.",
+        ),
+    ),
     "multi-agent-system.html": dict(
         title="A Team of Six, and Only One of Me",
         eyebrow="Amazon · Alexa Smart Home · 2024–Present",
@@ -298,17 +316,6 @@ ai_pages = {
             "Every time I built something useful with AI, the next question was always the same: can someone else on the team use this without me. That question became the Agent Marketplace &mdash; an internal, self-serve platform of pre-configured agents, skills, and workflows that anyone could download, configure locally, and run immediately.",
             "The design constraint I cared most about was zero dependency. If a tool only works because the person who built it is on standby to support it, it doesn't scale &mdash; it just relocates the bottleneck. So every agent in the marketplace had to stand on its own, with onboarding for tools like Kiro and Claude Code dropping from days of manual configuration to something closer to instant.",
             "It's now in active use across SDE, design, and GTM in a multi-hundred-person division &mdash; people I've never spoken to, running tools I built, without needing me in the loop. That's the outcome I was actually optimizing for.",
-        ],
-    ),
-    "ai-enablement.html": dict(
-        title="From One Proposal to a Self-Sustaining Program",
-        eyebrow="Amazon · Alexa Smart Home · 2024–Present",
-        meta="A capability gap, a VP-approved proposal, and a program that no longer needs me.",
-        stat="9 &rarr; 18 &rarr; self-sustaining",
-        paragraphs=[
-            "I noticed the gap before there was a program to fix it: the org was excited about AI in the abstract but had no structured way to actually build fluency at scale. So I wrote the proposal myself &mdash; not a request for resources, but a specific plan for a cross-org AI enablement initiative &mdash; and took it to VP-level approval.",
-            "The core team grew from 9 to 18 people within a year, but the number that actually mattered came later: roughly a dozen colleagues now independently lead org-wide weekly trainings, and SDE, design, and GTM teams build and deploy their own AI tools without any ongoing support from the original team. I also designed the division's first AI adoption measurement system &mdash; tracking attitudes, usage, and impact on a quarterly cadence &mdash; so the program's success wouldn't rely on anecdote.",
-            "A program that still needs its founder a year in hasn't actually succeeded. The best evidence this one worked is how little anyone needs me for it now.",
         ],
     ),
     "messaging-pipeline.html": dict(
@@ -351,6 +358,7 @@ for filename, content in ai_pages.items():
         paragraphs=content["paragraphs"],
         back_anchor="#ai-work",
         back_label="Back to AI work",
+        gallery=content.get("gallery"),
     )
     with open(os.path.join(AI_OUT_DIR, filename), "w") as f:
         f.write(html)
