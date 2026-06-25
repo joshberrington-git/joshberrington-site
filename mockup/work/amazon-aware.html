@@ -84,8 +84,9 @@
 
   .story-hero-img {
     width: 100%; aspect-ratio: 16/9; object-fit: cover;
-    border-radius: 20px; margin-bottom: 40px;
+    border-radius: 20px; margin-bottom: 40px; cursor: zoom-in; transition: opacity 0.2s ease;
   }
+  .story-hero-img:hover { opacity: 0.9; }
   .story-stat-hero {
     border-radius: 20px; margin-bottom: 40px; padding: 48px 32px;
     background: var(--bg-raised); border-left: 2px solid var(--accent);
@@ -181,12 +182,12 @@
   <h1 class="story-title">Zero to Market in Nine Months</h1>
   <p class="story-meta">A CEO-level priority, a global pandemic, and a brand built from nothing.</p>
 
-  <img class="story-hero-img" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/DG_FW21_Womens_On_Dresses_Shot20_190_FINAL.jpg" alt="Amazon Aware campaign imagery" />
+  <img class="story-hero-img zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/DG_FW21_Womens_On_Dresses_Shot20_190_FINAL.jpg" alt="Amazon Aware campaign imagery" />
 
   <div class="story-body">
-      <p>Amazon Aware wasn't a side project or a slide in someone else's strategy deck &mdash; it was an S-Team level priority, a CEO-driven initiative to launch Amazon's first sustainability-led brand, and it had to go from PR/FAQ to in-market reality in nine months. I was the founding go-to-market marketing lead, which meant the brand didn't exist yet when I started, and the clock was already running.</p>
-      <p>The timing made it harder, not easier. We were still in the middle of COVID, working through supply chain disruptions on top of everything else that comes with inventing a brand from nothing &mdash; positioning, sourcing, packaging, channel strategy, all of it standing up at once, on a deadline set well above my level.</p>
-      <p>We tested loudly instead of waiting for certainty: messaging, positioning, and channel strategy iterated against real purchase behavior rather than research decks. By the end of year one, Amazon Aware was overindexing 3&ndash;4x against Amazon's private label averages, pulling 34% of glance views and 29% of revenue through marketing-driven channels alone.</p>
+      <p>Amazon Aware wasn't a side project or a slide in someone else's strategy deck. It was an S-Team and CEO-level priority: launch Amazon's first sustainability-led brand, and take it from PRFAQ to in-market reality in nine months. I was the founding go-to-market lead, building it from zero. The brand didn't exist when I started, and the clock was already running.</p>
+      <p>The timing made it brutally hard. We were building through the back half of COVID, and the supply chain disruptions coming out of the pandemic turned an already complex launch into a far harder one. Positioning, sourcing, packaging, inventory, and channel strategy all had to stand up at once, on a deadline set well above my level, while the ground kept shifting underneath us. Inventing a brand from nothing is hard enough without the supply chain working against you.</p>
+      <p>So we tested loudly instead of waiting for certainty: messaging, positioning, and channel strategy iterated against real purchase behavior rather than research decks. By the end of year one, Amazon Aware was overindexing 3&ndash;4x against Amazon's private label averages, and the marketing channels I owned were outperforming their benchmarks, driving a disproportionate share of the brand's glance views and revenue.</p>
       <p>The lesson that stuck with me: speed and credibility aren't actually in tension if you're willing to test in public and adjust faster than the constraints around you change.</p>
   </div>
 </div>
@@ -210,16 +211,15 @@
   });
 
   (function () {
-    const imgs = document.querySelectorAll('.story-gallery img');
+    const imgs = document.querySelectorAll('.zoomable');
     if (!imgs.length) return;
     const box = document.createElement('div');
     box.className = 'lightbox';
     box.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img alt="" />';
     document.body.appendChild(box);
     const big = box.querySelector('img');
-    const openBox = (src, alt, isDesktop) => {
+    const openBox = (src, alt) => {
       big.src = src; big.alt = alt || '';
-      big.className = isDesktop ? 'is-desktop' : '';
       box.classList.add('open');
       document.body.style.overflow = 'hidden';
     };
@@ -228,7 +228,7 @@
       document.body.style.overflow = '';
     };
     imgs.forEach((im) => {
-      im.addEventListener('click', () => openBox(im.currentSrc || im.src, im.alt, im.classList.contains('gallery-desktop')));
+      im.addEventListener('click', () => openBox(im.currentSrc || im.src, im.alt));
     });
     box.addEventListener('click', (e) => { if (e.target !== big) closeBox(); });
     document.addEventListener('keydown', (e) => {

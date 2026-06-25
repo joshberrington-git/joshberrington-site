@@ -84,8 +84,9 @@
 
   .story-hero-img {
     width: 100%; aspect-ratio: 16/9; object-fit: cover;
-    border-radius: 20px; margin-bottom: 40px;
+    border-radius: 20px; margin-bottom: 40px; cursor: zoom-in; transition: opacity 0.2s ease;
   }
+  .story-hero-img:hover { opacity: 0.9; }
   .story-stat-hero {
     border-radius: 20px; margin-bottom: 40px; padding: 48px 32px;
     background: var(--bg-raised); border-left: 2px solid var(--accent);
@@ -99,22 +100,43 @@
   .story-body { font-family: 'Newsreader', serif; font-size: 1.18rem; line-height: 1.75; }
   .story-body p { margin: 0 0 26px; }
 
-  .story-gallery-wrap { margin: 40px 0 0; }
-  .story-gallery {
-    display: flex; align-items: flex-end; justify-content: center; gap: 26px;
-  }
-  .story-gallery img { display: block; height: auto; cursor: zoom-in; transition: opacity 0.2s ease; }
-  .story-gallery img:hover { opacity: 0.88; }
-  .story-gallery .gallery-desktop {
-    width: 62%; border-radius: 12px; border: 1px solid var(--border);
-    box-shadow: 0 10px 34px rgba(0,0,0,0.20);
-  }
-  .story-gallery .gallery-mobile { width: 28%; }
   .story-caption {
     font-family: 'Geist Mono', monospace; font-size: 0.76rem; letter-spacing: 0.03em;
     color: var(--text-muted); text-align: center; margin: 18px 0 0;
   }
-  @media (max-width: 560px) { .story-gallery { gap: 14px; } }
+  figure.story-fig { margin: 28px 0 0; }
+  figure.story-fig img {
+    width: 100%; display: block; border-radius: 16px; border: 1px solid var(--border);
+    cursor: zoom-in; transition: opacity 0.2s ease;
+  }
+  figure.story-fig img:hover { opacity: 0.9; }
+  figure.story-fig.narrow { max-width: 460px; margin-left: auto; margin-right: auto; }
+
+  /* Selected wins */
+  .wins { margin: 56px 0 0; }
+  .wins-label {
+    font-family: 'Geist Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted); margin: 0 0 28px;
+  }
+  .case + .case { margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border); }
+  .case-eyebrow {
+    font-family: 'Geist Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+  }
+  .case-title { font-size: 1.5rem; line-height: 1.2; margin: 0 0 16px; }
+  .case-stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+  .case-stats .chip {
+    font-family: 'Geist Mono', monospace; font-size: 0.74rem; letter-spacing: 0.02em;
+    color: var(--text); background: var(--bg-raised); border: 1px solid var(--border);
+    border-radius: 999px; padding: 6px 12px;
+  }
+  .case-stats .chip .accent { color: var(--accent); }
+  .case-link {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 8px;
+    font-family: 'Geist Mono', monospace; font-size: 0.78rem; letter-spacing: 0.02em;
+    color: var(--accent); text-decoration: none;
+  }
+  .case-link:hover { text-decoration: underline; }
 
   .lightbox {
     position: fixed; inset: 0; z-index: 100;
@@ -181,14 +203,98 @@
   <h1 class="story-title">Leading GTM for AI-Powered Smart Home</h1>
   <p class="story-meta">The launch narrative for Alexa+ Smart Home, and the agent infrastructure built to support it.</p>
 
-  <img class="story-hero-img" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/alexa-smart-home.png" alt="Alexa smart home devices and services" />
+  <img class="story-hero-img zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/alexa-smart-home.png" alt="Alexa smart home devices and services" />
 
   <div class="story-body">
-      <p>I lead go-to-market strategy for Alexa Smart Home's AI-powered hardware and software features &mdash; the layer of the business where the devices people already trust in their homes start getting genuinely smarter. That includes owning the launch narrative for Alexa+ Smart Home, the division's flagship AI moment at CES 2026, where the story had to land with press, partners, and customers all at once.</p>
-      <p>Bringing an AI-native product to market requires a different motion than a traditional hardware launch: the value isn't a spec sheet, it's a behavior change, and the narrative has to make an invisible, evolving capability feel concrete enough to want. That meant rebuilding the GTM playbook itself &mdash; positioning, proof points, and sequencing &mdash; for a product that keeps getting smarter after it ships.</p>
-      <p>The work didn't stop at the narrative. To move at the speed AI products demand, I built a six-agent AI system to compress my own workflow, then rebuilt it as a self-serve agent platform so SDE, design, and GTM teams across the division could do the same. What started as a personal productivity tool is now infrastructure other teams build on.</p>
-      <p>The thread connecting both: in an AI-native world, marketing leaders can't just narrate the transformation &mdash; they have to be early, credible practitioners of it.</p>
+      <p>I lead go-to-market strategy for Alexa Smart Home's AI-powered hardware and software features, the layer of the business where the devices people already trust in their homes start getting genuinely smarter. That includes owning the launch narrative for Alexa+ Smart Home, the story that has to land with press, partners, and customers all at once.</p>
+      <p>Bringing an AI-native product to market requires a different motion than a traditional hardware launch: the value isn't a spec sheet, it's a behavior change, and the narrative has to make an invisible, evolving capability feel concrete enough to want. That meant rebuilding the GTM playbook itself, from positioning to proof points to sequencing, for a product that keeps getting smarter after it ships.</p>
+      <p>The work didn't stop at the narrative. I transformed how I work for an agentic era, putting AI agents at the center of my own workflow, then led a division-wide initiative to do the same across Alexa: rethinking how teams operate, and how the org thinks about work itself, as agents become part of how things get done. What began as a personal shift became an organization-wide transformation.</p>
+      <p>The thread connecting both: in an AI-native world, marketing leaders can't just narrate the transformation. They have to be early, credible practitioners of it.</p>
   </div>
+
+  <section class="wins">
+    <p class="wins-label">Selected wins</p>
+
+    <article class="case">
+      <p class="case-eyebrow">Positioning</p>
+      <h2 class="case-title">The Smart Home Starter Kit</h2>
+      <div class="case-stats">
+        <span class="chip"><span class="accent">4.6&#9733;</span> customer rating</span>
+        <span class="chip">Zero creative budget</span>
+        <span class="chip">Gen AI + CGI creative</span>
+        <span class="chip">100% organic</span>
+      </div>
+      <div class="story-body">
+        <p>None of it was new. The Echo Hub, the Smart Plug, the four Amazon Basics smart bulbs: every component already existed and already sold on its own. What didn't exist was the idea, a single, obvious on-ramp for someone who wants a smart home but has no idea where to start. We bundled the existing pieces into one hard bundle and built the whole thing around that one job.</p>
+      </div>
+
+      <figure class="story-fig">
+        <img class="zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/smart-home-starter-kit-hero.jpg" alt="Smart Home Starter Kit: Echo Hub, four smart bulbs, and a smart plug" />
+        <figcaption class="story-caption">The hero creative, made entirely with generative AI and CGI. No photo shoot, no set.</figcaption>
+      </figure>
+
+      <div class="story-body">
+        <p>And it worked with almost nothing behind it. No creative budget. The imagery was produced entirely with generative AI and CGI instead of a photo shoot. No paid media, so the reach and conversion were all organic. It sits at 4.6 stars, and customers genuinely love it.</p>
+      </div>
+
+      <figure class="story-fig">
+        <img class="zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/smart-home-starter-kit-setup.jpg" alt="Smart Home Starter Kit setup in three steps: unbox, tap, enjoy" />
+        <figcaption class="story-caption">One idea, start to finish: unbox, tap, enjoy.</figcaption>
+      </figure>
+
+      <div class="story-body">
+        <p>It's a proof point of what positioning alone can do. Same products, sharper idea: a single-minded promise plus a clear picture of who it's for turned a set of existing SKUs into something people actively choose.</p>
+      </div>
+
+      <a class="case-link" href="https://www.amazon.com/Smart-Starter-Alexa-Amazon-Basics/dp/B0DB3YCPH5" target="_blank" rel="noopener">See it on Amazon &rarr;</a>
+    </article>
+
+    <article class="case">
+      <p class="case-eyebrow">Feature marketing &amp; launch</p>
+      <h2 class="case-title">Announcing Smart Home's Next AI Features</h2>
+      <div class="case-stats">
+        <span class="chip">Sept 2025 &middot; NYC</span>
+        <span class="chip">Alexa+ Smart Home announce</span>
+        <span class="chip">Echo &times; Ring</span>
+        <span class="chip">Fire TV &times; Ring</span>
+      </div>
+      <div class="story-body">
+        <p>In September 2025, I led the announce strategy and planning for a slate of new Alexa+ Smart Home features at Amazon's fall Devices &amp; Services event in New York. I owned the Alexa+ Smart Home portion specifically, not the full event.</p>
+      </div>
+
+      <figure class="story-fig">
+        <img class="zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/alexa-firetv-camera-dashboard.jpg" alt="Fire TV in a living room showing the Alexa smart home camera dashboard" />
+        <figcaption class="story-caption">The smart home on the biggest screen in the house: live cameras, lights, and climate, right on Fire TV.</figcaption>
+      </figure>
+
+      <div class="story-body">
+        <p>The features are some of the most forward-leaning consumer AI we have brought to market: new camera intelligence that connects Ring with Echo, and Ring with Fire TV, so AI-powered camera features surface right on the screens already in people's homes. These are capabilities customers are seeing for the first time anywhere, and the announce had to make that land without drowning in technical detail.</p>
+      </div>
+
+      <figure class="story-fig narrow">
+        <img class="zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/alexa-ring-ai-doorbell.jpg" alt="Ring video doorbell using AI to talk with a delivery visitor" />
+        <figcaption class="story-caption">AI at the door: Ring can greet a visitor and handle the moment on its own.</figcaption>
+      </figure>
+
+      <figure class="story-fig">
+        <img class="zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/alexa-camera-ai-activity.jpg" alt="AI-curated camera activity surfacing the most interesting clips of the day" />
+        <figcaption class="story-caption">AI does the watching for you, surfacing the few moments worth seeing out of dozens.</figcaption>
+      </figure>
+
+      <figure class="story-fig">
+        <img class="zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/alexa-firetv-smart-home-overlay.jpg" alt="Fire TV playing a show with a live smart home and camera overlay" />
+        <figcaption class="story-caption">Glance at the front door without leaving your show, with the smart home brought onto Fire TV.</figcaption>
+      </figure>
+
+      <div class="story-body">
+        <p>My job was to shape how the story came across: what we led with, how we sequenced the features, and how we made never-before-seen AI feel immediately useful instead of abstract. I also helped refresh the pages where customers go to discover these features.</p>
+      </div>
+
+      <a class="case-link" href="https://www.amazon.com/alexa/smart-home" target="_blank" rel="noopener">Alexa Smart Home &rarr;</a>
+      <a class="case-link" href="https://www.amazon.com/firetv/manage-smart-home" target="_blank" rel="noopener" style="margin-left:22px;">Fire TV Smart Home &rarr;</a>
+    </article>
+
+  </section>
 </div>
 
 <footer>
@@ -210,16 +316,15 @@
   });
 
   (function () {
-    const imgs = document.querySelectorAll('.story-gallery img');
+    const imgs = document.querySelectorAll('.zoomable');
     if (!imgs.length) return;
     const box = document.createElement('div');
     box.className = 'lightbox';
     box.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img alt="" />';
     document.body.appendChild(box);
     const big = box.querySelector('img');
-    const openBox = (src, alt, isDesktop) => {
+    const openBox = (src, alt) => {
       big.src = src; big.alt = alt || '';
-      big.className = isDesktop ? 'is-desktop' : '';
       box.classList.add('open');
       document.body.style.overflow = 'hidden';
     };
@@ -228,7 +333,7 @@
       document.body.style.overflow = '';
     };
     imgs.forEach((im) => {
-      im.addEventListener('click', () => openBox(im.currentSrc || im.src, im.alt, im.classList.contains('gallery-desktop')));
+      im.addEventListener('click', () => openBox(im.currentSrc || im.src, im.alt));
     });
     box.addEventListener('click', (e) => { if (e.target !== big) closeBox(); });
     document.addEventListener('keydown', (e) => {

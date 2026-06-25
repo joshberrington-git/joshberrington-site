@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Brand That Wrote the Playbook — Josh Berrington</title>
+<title>Reinventing the Everyday Shower — Josh Berrington</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -84,7 +84,7 @@
 
   .story-hero-img {
     width: 100%; aspect-ratio: 16/9; object-fit: cover;
-    border-radius: 20px; margin-bottom: 40px;
+    border-radius: 20px; margin-bottom: 40px; cursor: zoom-in;
   }
   .story-stat-hero {
     border-radius: 20px; margin-bottom: 40px; padding: 48px 32px;
@@ -99,22 +99,20 @@
   .story-body { font-family: 'Newsreader', serif; font-size: 1.18rem; line-height: 1.75; }
   .story-body p { margin: 0 0 26px; }
 
-  .story-gallery-wrap { margin: 40px 0 0; }
-  .story-gallery {
-    display: flex; align-items: flex-end; justify-content: center; gap: 26px;
+  figure.story-fig-duo { margin: 44px 0 0; }
+  .story-duo {
+    display: flex; align-items: flex-start; justify-content: center; gap: 18px;
   }
-  .story-gallery img { display: block; height: auto; cursor: zoom-in; transition: opacity 0.2s ease; }
-  .story-gallery img:hover { opacity: 0.88; }
-  .story-gallery .gallery-desktop {
-    width: 62%; border-radius: 12px; border: 1px solid var(--border);
-    box-shadow: 0 10px 34px rgba(0,0,0,0.20);
+  .story-duo img {
+    width: 50%; height: auto; display: block; border-radius: 16px;
+    border: 1px solid var(--border); cursor: zoom-in; transition: opacity 0.2s ease;
   }
-  .story-gallery .gallery-mobile { width: 28%; }
+  .story-duo img:hover, .story-hero-img:hover { opacity: 0.9; }
   .story-caption {
     font-family: 'Geist Mono', monospace; font-size: 0.76rem; letter-spacing: 0.03em;
     color: var(--text-muted); text-align: center; margin: 18px 0 0;
   }
-  @media (max-width: 560px) { .story-gallery { gap: 14px; } }
+  @media (max-width: 560px) { .story-duo { gap: 12px; } }
 
   .lightbox {
     position: fixed; inset: 0; z-index: 100;
@@ -178,15 +176,26 @@
     <a class="back-link" href="../index.html#work">&larr; Back to work</a>
     <div class="story-eyebrow">Unilever · Dove · 2018–2019</div>
   </div>
-  <h1 class="story-title">The Brand That Wrote the Playbook</h1>
-  <p class="story-meta">Landing at the brand that shaped how I think about marketing, right out of business school.</p>
+  <h1 class="story-title">Reinventing the Everyday Shower</h1>
+  <p class="story-meta">Leading Dove's new body wash formats, the foams and mousses that reimagined a daily ritual, and owning the five-year roadmap behind them.</p>
 
-  <img class="story-hero-img" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/SR_Dream_Y3_campaign_181022.jpg" alt="Dove campaign imagery" />
+  <img class="story-hero-img zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/SR_Dream_Y3_campaign_181022.jpg" alt="Dove campaign imagery" />
 
   <div class="story-body">
-      <p>Dove was a brand I admired long before I worked there &mdash; even before business school, I thought of it as the brand that had written the playbook for what best-in-class CPG marketing actually looks like. Landing there in 2018, straight out of business school, felt less like a job and more like getting to study inside the textbook.</p>
-      <p>My role was global marketing lead for Dove's new formats &mdash; everything outside the core body wash and bar business: shower foams, bath bombs, and the formats that came after. I owned the five-year innovation roadmap for that portfolio, including Dove Shower Foam, which had recently launched and was already finding real traction in market.</p>
-      <p>Working inside a &euro;2 billion global business teaches you a specific kind of discipline &mdash; every decision sits inside a much longer roadmap than the campaign in front of you, and getting that balance right, on a brand this influential, was the best classroom I could have asked for early in my career.</p>
+      <p>Dove was a brand I admired long before I worked there. Even before business school, I thought of it as the brand that had written the playbook for what best-in-class CPG marketing actually looks like. Landing there in 2018, straight out of business school, felt less like a job and more like stepping inside the textbook.</p>
+      <p>Dove Shower Foam, a lighter take on body wash, and Dove Shower Mousse, a whipped, mousse-textured reinvention of it, both launched just as I arrived, and I took the marketing lead for them as they found their footing in market. From there I became brand lead for Dove's new body wash formats: the full portfolio beyond core body wash and the beauty bar. I owned its five-year innovation roadmap, from the foam and mousse range through bath bombs and the formats that came after.</p>
+  </div>
+
+  <figure class="story-fig-duo">
+    <div class="story-duo">
+      <img class="zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/dove-body-wash-mousse.jpg" alt="Dove Body Wash Mousse in rose and argan oil variants" />
+      <img class="zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/dove-shower-mousse-ugc.jpg" alt="Dove Shower Mousse held in the shower, dispensing whipped foam" />
+    </div>
+    <figcaption class="story-caption">Dove's new body wash formats: the whipped, weightless mousse that customers called a shower treat.</figcaption>
+  </figure>
+
+  <div class="story-body">
+      <p>Working inside a &euro;2 billion global business teaches a specific kind of discipline. Every decision sits inside a roadmap far longer than the campaign in front of you, and learning to get that balance right, on a brand this influential and this early in my career, was the best classroom I could have asked for.</p>
   </div>
 </div>
 
@@ -209,16 +218,15 @@
   });
 
   (function () {
-    const imgs = document.querySelectorAll('.story-gallery img');
+    const imgs = document.querySelectorAll('.zoomable');
     if (!imgs.length) return;
     const box = document.createElement('div');
     box.className = 'lightbox';
     box.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img alt="" />';
     document.body.appendChild(box);
     const big = box.querySelector('img');
-    const openBox = (src, alt, isDesktop) => {
+    const openBox = (src, alt) => {
       big.src = src; big.alt = alt || '';
-      big.className = isDesktop ? 'is-desktop' : '';
       box.classList.add('open');
       document.body.style.overflow = 'hidden';
     };
@@ -227,7 +235,7 @@
       document.body.style.overflow = '';
     };
     imgs.forEach((im) => {
-      im.addEventListener('click', () => openBox(im.currentSrc || im.src, im.alt, im.classList.contains('gallery-desktop')));
+      im.addEventListener('click', () => openBox(im.currentSrc || im.src, im.alt));
     });
     box.addEventListener('click', (e) => { if (e.target !== big) closeBox(); });
     document.addEventListener('keydown', (e) => {
