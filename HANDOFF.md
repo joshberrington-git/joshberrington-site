@@ -21,7 +21,8 @@ Repo: `joshberrington-git/joshberrington-site`. Deployed via **GitHub Pages** (c
 ## Structure
 - `index.html` — homepage (hero, brand/GTM work grid, experience timeline, Selected AI works terminal)
 - `work/` — 5 case studies: `alexa-smart-home`, `amazon-aware`, `amazon-essentials`, `dove-body-wash`, `sheamoisture-men`
-- `ai/` — 4 AI works: `dictate`, `multi-agent-system`, `agent-marketplace`, `messaging-pipeline`
+- `ai/` — 3 linked AI works: `dictate`, `multi-agent-system`, `agent-marketplace`
+  (`messaging-pipeline` file still exists but is dropped, see "Dropped" below)
 - `assets/cloudinary_manifest.json` — uploaded image URLs
 - `scripts/upload_to_cloudinary.py` — uploads + appends to manifest (reads `.env` `CLOUDINARY_URL`); `build_story_pages.py` — generates story pages
 - `.env` (gitignored) — `CLOUDINARY_URL`
@@ -49,14 +50,14 @@ Repo: `joshberrington-git/joshberrington-site`. Deployed via **GitHub Pages** (c
 - Moved site `mockup/` → repo root; added `CNAME`; pointed the domain.
 
 ## TODO / open items
-1. `ai/multi-agent-system.html` — not yet reviewed: scrub em dashes + reconsider its headline
-   graphic (the other two AI pages had their stat-hero graphics removed).
-2. `ai/messaging-pipeline.html` — Josh wants the whole vignette/story **reworked**; currently
-   unlinked from the homepage (file still present).
-3. Confirm `joshberrington.com` resolves with valid **HTTPS**; tick **Enforce HTTPS**.
-4. Homepage experience **descriptions** still reference old framing (Alexa desc mentions
+1. Confirm `joshberrington.com` resolves with valid **HTTPS**; tick **Enforce HTTPS**.
+2. Homepage experience **descriptions** still reference old framing (Alexa desc mentions
    "six-agent AI system / self-serve agent platform") — align with the elevated framing if desired.
-5. Optional polish: favicon, OG/social meta tags, custom 404 page.
+3. Optional polish: favicon, OG/social meta tags, custom 404 page.
+
+## Dropped
+- `ai/messaging-pipeline.html` — Josh decided to bag this one (2026-07-08). File still exists in
+  the repo but stays unlinked from the homepage; not on the roadmap for a rework.
 
 ## Case-study facts (keep accurate)
 - **SheaMoisture** — "a celebration, not a turnaround"; #DefineYourBeard; 5x revenue, 4x'd
