@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>A Team of Six, and Only One of Me — Josh Berrington</title>
+<title>Five Agents, One Marketing Team — Josh Berrington</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -95,6 +95,13 @@
     font-family: 'Geist Mono', monospace; font-size: 2.2rem; color: var(--accent);
     margin: 0; letter-spacing: -0.01em;
   }
+  .story-diagram-img {
+    display: block; width: 100%; max-width: 440px; margin: 0 auto 40px;
+    border-radius: 16px; border: 1px solid var(--border);
+    box-shadow: 0 10px 34px rgba(0,0,0,0.20);
+    cursor: zoom-in; transition: opacity 0.2s ease;
+  }
+  .story-diagram-img:hover { opacity: 0.92; }
 
   .story-body { font-family: 'Newsreader', serif; font-size: 1.18rem; line-height: 1.75; }
   .story-body p { margin: 0 0 26px; }
@@ -178,15 +185,15 @@
     <a class="back-link" href="../index.html#ai-work">&larr; Back to AI work</a>
     <div class="story-eyebrow">Amazon · Alexa Smart Home · 2024–Present</div>
   </div>
-  <h1 class="story-title">A Team of Six, and Only One of Me</h1>
-  <p class="story-meta">6 agents, 10 reusable skills, and a marketing org's output from a single IC.</p>
+  <h1 class="story-title">Five Agents, One Marketing Team</h1>
+  <p class="story-meta">5 agents, 10 reusable skills, and a marketing org's output from a single IC.</p>
 
-  <div class="story-stat-hero"><p class="stat">6 agents · 10 skills</p></div>
+  <img class="story-diagram-img zoomable" src="https://res.cloudinary.com/dflbkiog6/image/upload/joshberrington-site/multi-agent-system-architecture.jpg" alt="Multi-agent marketing system architecture: a manager directing steering files, five agents (Writer, Strategist, Copywriter, Analyst, Researcher), each with a persona, skills, tools, and feedback, backed by a context and projects file system" />
 
   <div class="story-body">
-      <p>At some point I stopped asking whether AI could help with one task and started asking what a marketing team built entirely out of agents would actually look like. The answer became a six-agent system &mdash; a copywriter, a GTM strategist, an executive writer, a researcher, and a data analyst, each one scoped tightly enough to be reliable, coordinated tightly enough to act like a team.</p>
-      <p>The point was never novelty. It was throughput. Ten reusable skills sit underneath the agents, so the same system that drafts a competitive briefing this week can turn around an executive narrative next week, without being rebuilt each time. Work that used to take a team weeks &mdash; messaging development, competitive intelligence, executive reporting &mdash; now moves in hours, run by one person.</p>
-      <p>What surprised me wasn't that the agents could do the work. It was how much of my own job turned out to be orchestration once I stopped doing the writing myself &mdash; deciding what good output looks like, catching where a model's confidence outruns its judgment, and building the scaffolding that makes six independent agents behave like a single accountable system.</p>
+      <p>At some point I stopped asking whether AI could help with one task and started asking what a marketing team built entirely out of agents would actually look like. The answer became a five-agent system: a copywriter, a GTM strategist, an executive writer, a researcher, and a data analyst, each one scoped tightly enough to be reliable, coordinated tightly enough to act like a team.</p>
+      <p>Ten reusable skills sit underneath the agents, so the same system that drafts a competitive briefing this week can turn around an executive narrative next week without being rebuilt each time. Work that used to take a team weeks now moves in hours, run by one person: messaging development, competitive intelligence, executive reporting.</p>
+      <p>My job became less about writing and more about orchestration: deciding what good output looks like, catching where a model's confidence outruns its judgment, and building the scaffolding that makes five independent agents behave like a single accountable system.</p>
   </div>
 </div>
 
@@ -209,7 +216,7 @@
   });
 
   (function () {
-    const imgs = document.querySelectorAll('.story-gallery img');
+    const imgs = document.querySelectorAll('.zoomable');
     if (!imgs.length) return;
     const box = document.createElement('div');
     box.className = 'lightbox';
